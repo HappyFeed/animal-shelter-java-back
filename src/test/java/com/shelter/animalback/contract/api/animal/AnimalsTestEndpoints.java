@@ -61,7 +61,7 @@ public class AnimalsTestEndpoints {
         Mockito.when(animalService.getAll()).thenReturn(animals);
     }
 
-    @State("has animal by name")
+    @State("has the animal")
     public void getAnimal() {
         Animal animal = new Animal();
 
@@ -73,7 +73,7 @@ public class AnimalsTestEndpoints {
         Mockito.when(animalService.get("Bigotes")).thenReturn(animal);
     }
 
-    @State("add animal")
+    @State("add an animal")
     public void saveAnimal() {
         Animal animal = new Animal();
 
@@ -85,19 +85,21 @@ public class AnimalsTestEndpoints {
         Mockito.when(animalService.save(animal)).thenReturn(animal);
     }
 
-    @State("delete animal")
+    @State("delete an animal")
     public void deleteAnimal() {
-        Animal animal = new Animal();
-
-        animal.setName("Bigotes");
-        animal.setBreed("Siames");
-        animal.setGender("Male");
-        animal.setVaccinated(true);
-
-        Mockito.when(animalService.delete("Bigotes")).thenReturn(animal);
+        /*
+         * Animal animal = new Animal();
+         * 
+         * animal.setName("Bigotes");
+         * animal.setBreed("Siames");
+         * animal.setGender("Male");
+         * animal.setVaccinated(true);
+         * 
+         * Mockito.when(animalService.delete("Bigotes")).thenReturn(animal);
+         */
     }
 
-    @State("edit animal")
+    @State("edit an animal")
     public void updateAnimal() {
         Animal animal = new Animal();
 
@@ -105,7 +107,6 @@ public class AnimalsTestEndpoints {
         animal.setBreed("Siames");
         animal.setGender("Male");
         animal.setVaccinated(true);
-
 
         Mockito.when(animalService.replace("Bigotes", animal)).thenReturn(animal);
     }
